@@ -7,6 +7,7 @@ import java.util.List;
 
 @Service
 public class InventoryItemService {
+    //edward comment to test commit
     private final List<InventoryItem> inventoryItems = new ArrayList<>();
     private long idCounter = 1;
 
