@@ -11,7 +11,7 @@ import java.util.List;
 public class InventoryItemController {
 
     private final InventoryItemService inventoryItemService;
-
+// comment
     @Autowired
     public InventoryItemController(InventoryItemService inventoryItemService) {
         this.inventoryItemService = inventoryItemService;
