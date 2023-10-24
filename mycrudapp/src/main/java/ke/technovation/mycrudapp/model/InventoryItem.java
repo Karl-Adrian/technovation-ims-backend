@@ -3,7 +3,7 @@ package ke.technovation.mycrudapp.model;
 public class InventoryItem {
     private Long id;
     private String name;
-    private String description;
+    private int price;
     private int quantity;
 
     // Constructors, getters, and setters
@@ -32,12 +32,12 @@ public class InventoryItem {
         this.quantity = quantity;
     }
 
-    public String getDescription() {
-        return description;
+    public int getPrice() {
+        return price;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
 
