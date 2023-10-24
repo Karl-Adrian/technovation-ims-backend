@@ -1,5 +1,8 @@
 package ke.technovation.mycrudapp.model;
 
+import org.apache.el.util.Validation;
+import org.springframework.boot.context.properties.bind.validation.BindValidationException;
+
 public class InventoryItem {
     private Long id;
     private String name;
@@ -40,4 +43,8 @@ public class InventoryItem {
         this.description = description;
     }
 }
+
+
+
+
 
