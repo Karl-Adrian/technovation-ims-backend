@@ -39,21 +39,6 @@ public abstract class InventoryItemController {
     public void InventoryItem(InventoryItemService inventoryItemService){
     }
 
-    public abstract  List getId();InventoryItemController() {
-        new InventoryItemController() {
-            public List getId() {
-                return null;
-            }
-        };
-        new InventoryItemService();
-        int i;int quantity;
-        int j;int price;
-        if(i<=9999 && j<199) {
-            return new InventoryItemService;
-        }
-    }
-
-
     @PutMapping("/{id}")
     public InventoryItem updateItem(@PathVariable Long id, @RequestBody InventoryItem item) {
         return inventoryItemService.updateItem(id, item);
