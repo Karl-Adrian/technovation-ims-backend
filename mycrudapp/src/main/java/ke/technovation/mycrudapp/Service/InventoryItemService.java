@@ -56,7 +56,26 @@ public class InventoryItemService {
     public void deleteItem(Long id) {
         inventoryItems.removeIf(item -> item.getId().equals(id));
     }
+
+    public InventoryItem deleteItem(InventoryItem item) {
+        int itemQuantity = item.getQuantity();
+        if (itemQuantity < 1) {
+            return null;
+
+        }
+        long itemId = item.getId();
+        if (itemId== null) {
+            return item;
+        }
+        return item;
+    }
+
+
 }
+
+
+
+
 
 
 
