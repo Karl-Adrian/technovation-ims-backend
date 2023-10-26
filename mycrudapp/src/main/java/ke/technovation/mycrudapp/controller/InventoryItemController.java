@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins= "*", maxAge = 3600)
-
 @RestController
-@RequestMapping("/api/inventory")
-public abstract class InventoryItemController {
-
-    private  InventoryItemService inventoryItemService;
+@RequestMapping("/inventory")
+@CrossOrigin(origins = "*", maxAge = 3600)
+public class InventoryItemController {
+    private InventoryItemService inventoryItemService;
 
     // comment
     @Autowired
@@ -22,7 +20,7 @@ public abstract class InventoryItemController {
     }
 
     //   Delegate the request to the service class and return the response
-    @GetMapping("/")
+    @GetMapping()
     public List<InventoryItem> getAllItems() {
         return inventoryItemService.getAllItems();
     }
@@ -32,11 +30,12 @@ public abstract class InventoryItemController {
         return inventoryItemService.getItemById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public InventoryItem addItem(@RequestBody InventoryItem item) {
         return inventoryItemService.addItem(item);
     }
-    public void InventoryItem(InventoryItemService inventoryItemService){
+
+    public void InventoryItem(InventoryItemService inventoryItemService) {
     }
 
     @PutMapping("/{id}")
