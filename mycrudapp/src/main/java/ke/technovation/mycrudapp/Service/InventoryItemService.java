@@ -1,5 +1,6 @@
 package ke.technovation.mycrudapp.Service;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import ke.technovation.mycrudapp.model.InventoryItem;
 import org.springframework.stereotype.Service;
 
@@ -23,18 +24,7 @@ public class InventoryItemService {
     //Logic to add a new item
 
     public InventoryItem addItem(InventoryItem item) {
-        String itemName = item.getName();
-        if (itemName == null) {
-            return null;
-        }
-        int itemQuantity = item.getQuantity();
-        if (itemQuantity <= 0) {
-            return null;
-        }
-        int itemPrice = item.getPrice();
-        if (itemPrice <= 0) {
-            return null;
-        }
+        if (validateItem(item)) return null;
         item.setId(idCounter++);
         inventoryItems.add(item);
         return item;
@@ -42,6 +32,7 @@ public class InventoryItemService {
     //Logic to update an existing item
 
     public InventoryItem updateItem(Long id, InventoryItem item) {
+        if (validateItem(item)) return null;
         for (int i = 0; i < inventoryItems.size(); i++) {
             if (inventoryItems.get(i).getId().equals(id)) {
                 item.setId(id);
@@ -51,6 +42,10 @@ public class InventoryItemService {
         }
         return null;
     }
+
+    private static boolean validateItem(InventoryItem item) {
+        return item.getName() == null || item.getQuantity() <= 0 || item.getPrice() <= 0;
+    }
     // Logic to delete an item
 
     public void deleteItem(Long id) {
@@ -58,20 +53,32 @@ public class InventoryItemService {
     }
 
     public InventoryItem deleteItem(InventoryItem item) {
-        int itemQuantity = item.getQuantity();
-        if (itemQuantity < 1) {
+        if (item.getId() == null) {
             return null;
-
         }
-        long itemId = item.getId();
-        if (itemId== null) {
-            return item;
-        }
+        inventoryItems.removeIf(searchItem -> searchItem.getId().equals(item.getId()));
         return item;
     }
 
-
+    public InventoryItem removeItem(InventoryItem item) {
+        validateItem(item);
+        return null;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
