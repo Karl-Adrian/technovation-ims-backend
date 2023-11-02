@@ -44,7 +44,6 @@ public class InventoryItemController {
         return inventoryItemService.updateItem(id, item);
     }
 
-
     @DeleteMapping("/{id}")
     public void deleteItem(@PathVariable Long id) {
         inventoryItemService.deleteItem(id);
