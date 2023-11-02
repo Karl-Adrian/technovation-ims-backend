@@ -2,12 +2,11 @@ package ke.technovation.mycrudapp.Service;
 
 import ke.technovation.mycrudapp.model.InventoryItem;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InventoryItemService {
+public class  InventoryItemService {
     //edward comment to test commit
     private final List<InventoryItem> inventoryItems = new ArrayList<>();
     private long idCounter = 1;
@@ -18,7 +17,7 @@ public class InventoryItemService {
 
     // Logic to find and return an item by ID
     public InventoryItem getItemById(Long id) {
-        return inventoryItems.stream().filter(item -> item.getId().equals(id)).findFirst().orElse(null);
+        return  inventoryItems.stream().filter(item -> item.getId().equals(id)).findFirst().orElse(null);
     }
     //Logic to add a new item
 

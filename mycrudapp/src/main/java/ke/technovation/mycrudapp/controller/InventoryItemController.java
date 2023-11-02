@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/inventory")
 @CrossOrigin(origins = "*", maxAge = 3600)
+
 public class InventoryItemController {
     private InventoryItemService inventoryItemService;
 

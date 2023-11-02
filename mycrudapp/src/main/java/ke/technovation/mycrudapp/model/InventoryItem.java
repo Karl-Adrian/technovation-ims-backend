@@ -1,11 +1,8 @@
 package ke.technovation.mycrudapp.model;
 
-
-public class InventoryItem {
+public class   InventoryItem {
     private Long id;
-    private String name;
-    private int price;
-    private int quantity;
+
 
     // Constructors, getters, and setters
     public Long getId() {
