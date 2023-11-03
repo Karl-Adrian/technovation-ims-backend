@@ -33,8 +33,8 @@ public class  InventoryItemService {
     public InventoryItem updateItem(Long id, InventoryItem item) {
         if (validateItem(item)) return null;
         for (int i = 0; i < inventoryItems.size(); i++) {
-            if (inventoryItems.get(i).getId().equals(id)) {
-                item.setId(id);
+            if (inventoryItems.get(i).getId().equals(item.getid())) {
+            
                 inventoryItems.set(i, item);
                 return item;
             }
