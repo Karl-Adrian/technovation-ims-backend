@@ -1,10 +1,10 @@
 package ke.technovation.mycrudapp.model;
 
-public class InventoryItem {
+public class   InventoryItem {
     private Long id;
-    private String name;
-    private int quantity;
-    private int price;
+private String name;
+private int quantity;
+private  int price      ;
 
 
     // Constructors, getters, and setters
@@ -39,16 +39,6 @@ public class InventoryItem {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "InventoryItem=>[" +
-                id +
-                name +
-                quantity +
-                price +
-                "]\n";
     }
 }
 
